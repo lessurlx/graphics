@@ -5,5 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(./Lib)
 
-add_executable(code main.cpp)
-add_executable(Transformation Transformation.cpp)
+find_package(OpenCV)
+
+add_executable(Transformation Transformation/Transformation.cpp)
+add_executable(Rasterizer Rasterizer/main.cpp Rasterizer/rasterizer.hpp Rasterizer/rasterizer.cpp Rasterizer/Triangle.hpp Rasterizer/Triangle.cpp)
