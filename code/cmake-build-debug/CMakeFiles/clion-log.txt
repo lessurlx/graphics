@@ -1,0 +1,9 @@
+"D:\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "E:\Learn\Courses\Computer Graphics\Note\code" -B "E:\Learn\Courses\Computer Graphics\Note\code\cmake-build-debug"
+-- OpenCV ARCH: x64
+-- OpenCV RUNTIME: mingw
+-- OpenCV STATIC: OFF
+-- Found OpenCV 4.6.0 in D:/opencv/build_mingw64/install/x64/mingw/lib
+-- You might need to add D:/opencv/build_mingw64/install/x64/mingw/bin to your PATH to be able to run your applications.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: E:/Learn/Courses/Computer Graphics/Note/code/cmake-build-debug

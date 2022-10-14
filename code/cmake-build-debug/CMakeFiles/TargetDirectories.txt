@@ -1,0 +1,4 @@
+E:/Learn/Courses/Computer Graphics/Note/code/cmake-build-debug/CMakeFiles/Transformation.dir
+E:/Learn/Courses/Computer Graphics/Note/code/cmake-build-debug/CMakeFiles/Rasterizer.dir
+E:/Learn/Courses/Computer Graphics/Note/code/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/Learn/Courses/Computer Graphics/Note/code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
