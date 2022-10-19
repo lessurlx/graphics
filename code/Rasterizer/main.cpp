@@ -50,8 +50,10 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio,
             0, 0, zNear + zFar, - zFar* zNear,
             0, 0, 1.0, 0;
 
+    // eye_fov 是视锥的角度
     float halfEyeAngelRadian = (eye_fov / 2.0 / 180.0) * MY_PI; //视角的一半
     float y_top = -zNear * std::tan(halfEyeAngelRadian);//y轴正方向值 = 显示视口的一半高度 zNear是负值！
+    // aspect_ratio 是屏幕宽高比
     float x_left = -y_top * aspect_ratio;//x轴负方向值 = 显示视口的一半宽度
     float y_down = -y_top;
     float x_right = -x_left;
@@ -70,7 +72,7 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio,
     //注意！此时已经经过了缩放，所以左下角的点的位置已经变化
     //左下角的点现在为 （-1，-1，zNear）
     //即其实可以不用管x和y轴，比较尺寸已经和窗口匹配了
-    //但网上其他人却还是右下方注释的那样写的，左侧+右侧或者上侧+下侧，结果不都是0么？
+    //这里的zNear和zFar的重心都是坐标轴，经过缩放之后，x和y的点都匹配上了，就不用再算了，算也是0
     translateMat << 1, 0, 0, 0,					//-(x_left+x_right)/2
             0, 1, 0, 0,					//-(y_top+y_down)/2
             0, 0, 1, -(zNear+zFar)/2,
@@ -130,6 +132,7 @@ int main(int argc, const char** argv)
     while (key != 27) {
         r.clear(rst::Buffers::Color | rst::Buffers::Depth);
 
+        // 旋转矩阵
         r.set_model(get_model_matrix(angle));
         r.set_view(get_view_matrix(eye_pos));
         r.set_projection(get_projection_matrix(45, 1, 0.1, 50));

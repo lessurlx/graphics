@@ -15,3 +15,6 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 # 链接OpenCV库文件
 add_executable(Rasterizer Rasterizer/main.cpp Rasterizer/rasterizer.hpp Rasterizer/rasterizer.cpp Rasterizer/Triangle.hpp Rasterizer/Triangle.cpp)
 target_link_libraries(Rasterizer ${OpenCV_LIBS})
+
+add_executable(Rasterizer2 Rasterizer2/main.cpp Rasterizer2/rasterizer.hpp Rasterizer2/rasterizer.cpp Rasterizer2/global.hpp Rasterizer2/Triangle.hpp Rasterizer2/Triangle.cpp)
+target_link_libraries(Rasterizer2 ${OpenCV_LIBS})
