@@ -159,6 +159,7 @@ void rst::rasterizer::rasterize_triangle(const Triangle& t) {
                 continue;
             }
             // If so, use the following code to get the interpolated z value.
+            // 透视插值矫正
             auto[alpha, beta, gamma] = computeBarycentric2D(x, y, t.v);
             float w_reciprocal = 1.0/(alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());
             float z_interpolated = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
